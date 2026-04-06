@@ -1,0 +1,29 @@
+[
+  {
+    "symbol": "NVDA",
+    "action": "BUY",
+    "signalDate": "2026-04-06",
+    "entryPrice": 912.45,
+    "stopPrice": 875.2,
+    "targetPrice": 980,
+    "positionSizePercent": 12
+  },
+  {
+    "symbol": "MSFT",
+    "action": "HOLD",
+    "signalDate": "2026-04-06",
+    "entryPrice": 428.1,
+    "stopPrice": 410,
+    "targetPrice": 452,
+    "positionSizePercent": 10
+  },
+  {
+    "symbol": "AMZN",
+    "action": "BUY",
+    "signalDate": "2026-04-06",
+    "entryPrice": 189.4,
+    "stopPrice": 181,
+    "targetPrice": 201,
+    "positionSizePercent": 8
+  }
+]

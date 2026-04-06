@@ -1,0 +1,52 @@
+[
+  {
+    "symbol": "NVDA",
+    "entryDate": "2024-01-12",
+    "exitDate": "2024-02-06",
+    "entryPrice": 548.2,
+    "exitPrice": 612.1,
+    "qty": 40,
+    "pl": 2556,
+    "plPercent": 11.66
+  },
+  {
+    "symbol": "MSFT",
+    "entryDate": "2024-02-09",
+    "exitDate": "2024-03-01",
+    "entryPrice": 410.45,
+    "exitPrice": 427.3,
+    "qty": 35,
+    "pl": 589.75,
+    "plPercent": 4.1
+  },
+  {
+    "symbol": "TSLA",
+    "entryDate": "2024-03-05",
+    "exitDate": "2024-03-19",
+    "entryPrice": 188.6,
+    "exitPrice": 176.25,
+    "qty": 60,
+    "pl": -741,
+    "plPercent": -6.55
+  },
+  {
+    "symbol": "AMZN",
+    "entryDate": "2024-03-22",
+    "exitDate": "2024-04-15",
+    "entryPrice": 177.1,
+    "exitPrice": 189.4,
+    "qty": 50,
+    "pl": 615,
+    "plPercent": 6.95
+  },
+  {
+    "symbol": "META",
+    "entryDate": "2024-04-18",
+    "exitDate": "2024-05-10",
+    "entryPrice": 481.75,
+    "exitPrice": 529,
+    "qty": 22,
+    "pl": 1039.5,
+    "plPercent": 9.81
+  }
+]
