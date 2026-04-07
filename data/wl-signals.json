@@ -1,12 +1,6 @@
 ﻿[
-  {"symbol":"NVDA","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":324650971.65, },
-  {"symbol":"TSLA","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":132666887.5, },
-  {"symbol":"INTC","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":116382160.1, },
-  {"symbol":"PLTR","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":113348879.75, },
-  {"symbol":"AAPL","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":78398377.15, },
-  {"symbol":"AMZN","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":63151103.4, },
-  {"symbol":"NFLX","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":58643749.8266042, },
-  {"symbol":"AMD","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":45473178.3, },
-  {"symbol":"WBD","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":43499646.15, },
-  {"symbol":"GOOGL","action":"BUY","signalDate":"2026-04-07 09:45:40","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":40168689.15, }
+  {"symbol":"NVDA","action":"BUY","signalDate":"2026-04-07 09:46:17","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":324650971.65, },
+  {"symbol":"TSLA","action":"BUY","signalDate":"2026-04-07 09:46:17","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":132666887.5, },
+  {"symbol":"INTC","action":"BUY","signalDate":"2026-04-07 09:46:17","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":116382160.1, },
+  {"symbol":"PLTR","action":"BUY","signalDate":"2026-04-07 09:46:17","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market (1)","orderType":"Market""weigth":113348879.75, }
 ]
