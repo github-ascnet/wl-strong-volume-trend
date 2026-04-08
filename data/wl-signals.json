@@ -1,6 +1,6 @@
 ﻿[
-  {"symbol":"NVDA","action":"BUY","isEntry":"TRUE","signalDate":"01/05/2025 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market""signalStatus":"Staged""weigth":324650971.65, },
-  {"symbol":"TSLA","action":"BUY","isEntry":"TRUE","signalDate":"01/05/2025 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market""signalStatus":"Staged""weigth":132666887.5, },
-  {"symbol":"INTC","action":"BUY","isEntry":"TRUE","signalDate":"01/05/2025 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market""signalStatus":"Staged""weigth":116382160.1, },
-  {"symbol":"PLTR","action":"BUY","isEntry":"TRUE","signalDate":"01/05/2025 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market""signalStatus":"Staged""weigth":113348879.75, }
+  {"symbol":"TSLA","action":"SELL","isEntry":"FALSE","signalDate":"12/03/2026 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.911239440272803, },
+  {"symbol":"INTC","action":"SELL","isEntry":"FALSE","signalDate":"12/03/2026 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.891320074883295, },
+  {"symbol":"NVDA","action":"SELL","isEntry":"FALSE","signalDate":"12/03/2026 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.724737413456528, },
+  {"symbol":"PLTR","action":"SELL","isEntry":"FALSE","signalDate":"12/03/2026 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.722709630807161, }
 ]
