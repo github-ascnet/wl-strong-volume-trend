@@ -1,8 +1,8 @@
 ﻿[
-  {"symbol":"NVDA","entryDate":"2023-03-31","exitDate":"2023-10-04","entryPrice":27.11,"exitPrice":43.71,"qty":40549,"pl":673109.4,"plPercent":61.2316538322297,"isOpen":false },
-  {"symbol":"TSLA","entryDate":"2023-03-31","exitDate":"2023-10-04","entryPrice":197.5,"exitPrice":248.19,"qty":5686,"pl":288219.34,"plPercent":25.6654665912724,"isOpen":false },
-  {"symbol":"AMD","entryDate":"2023-03-31","exitDate":"2023-10-04","entryPrice":96.15,"exitPrice":100.56,"qty":11344,"pl":50023.04,"plPercent":4.58621673498816,"isOpen":false },
-  {"symbol":"NFLX","entryDate":"2023-03-31","exitDate":"2023-10-04","entryPrice":33.9830003302034,"exitPrice":37.6499986281664,"qty":32809,"pl":120306.547157869,"plPercent":10.7903255879897,"isOpen":false },
+  {"symbol":"NVDA","entryDate":"2023-03-31","exitDate":null,"entryPrice":27.11,"exitPrice":null,"qty":40549,"pl":665285.443,"plPercent":60.5199213462145,"isOpen":true },
+  {"symbol":"TSLA","entryDate":"2023-03-31","exitDate":null,"entryPrice":197.5,"exitPrice":null,"qty":5686,"pl":278782.58,"plPercent":24.8251383589273,"isOpen":true },
+  {"symbol":"AMD","entryDate":"2023-03-31","exitDate":null,"entryPrice":96.15,"exitPrice":null,"qty":11344,"pl":44579.9199999999,"plPercent":4.08718013036459,"isOpen":true },
+  {"symbol":"NFLX","entryDate":"2023-03-31","exitDate":null,"entryPrice":33.9830003302034,"exitPrice":null,"qty":32809,"pl":121128.792135076,"plPercent":10.8640729544195,"isOpen":true },
   {"symbol":"NVDA","entryDate":"2023-01-11","exitDate":"2023-03-13","entryPrice":15.833,"exitPrice":22.752,"qty":57852,"pl":400273.988,"plPercent":43.6994306704451,"isOpen":false },
   {"symbol":"TSLA","entryDate":"2023-01-11","exitDate":"2023-03-13","entryPrice":122,"exitPrice":167.49,"qty":7744,"pl":352270.56,"plPercent":37.2864618615364,"isOpen":false },
   {"symbol":"NFLX","entryDate":"2023-01-11","exitDate":"2023-03-13","entryPrice":32.6500017354623,"exitPrice":28.7340017029351,"qty":28099,"pl":-110039.684913981,"plPercent":-11.9943098872614,"isOpen":false },
