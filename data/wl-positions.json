@@ -1,4 +1,8 @@
 ﻿[
+  {"symbol":"NVDA","entryDate":"2025-05-02","exitDate":null,"entryPrice":114.11,"exitPrice":null,"qty":21731,"pl":1500088.93,"plPercent":60.4941792705101,"isOpen":true },
+  {"symbol":"TSLA","entryDate":"2025-05-02","exitDate":null,"entryPrice":284.92,"exitPrice":null,"qty":8646,"pl":951836.14,"plPercent":38.6388349990025,"isOpen":true },
+  {"symbol":"INTC","entryDate":"2025-05-02","exitDate":null,"entryPrice":20.26,"exitPrice":null,"qty":121394,"pl":3033634.06,"plPercent":123.346414238505,"isOpen":true },
+  {"symbol":"PLTR","entryDate":"2025-05-02","exitDate":null,"entryPrice":118.8,"exitPrice":null,"qty":20873,"pl":724291.1,"plPercent":29.2086735542396,"isOpen":true },
   {"symbol":"NVDA","entryDate":"2023-11-06","exitDate":"2025-03-05","entryPrice":45.298,"exitPrice":117.54,"qty":30958,"pl":2236463.836,"plPercent":159.481369580747,"isOpen":false },
   {"symbol":"TSLA","entryDate":"2023-11-06","exitDate":"2025-03-05","entryPrice":224.2,"exitPrice":272.78,"qty":6334,"pl":307701.72,"plPercent":21.667871760717,"isOpen":false },
   {"symbol":"NFLX","entryDate":"2023-11-06","exitDate":"2025-03-05","entryPrice":43.4379990242462,"exitPrice":97.4920028223333,"qty":32224,"pl":1741832.21838956,"plPercent":124.439156685908,"isOpen":false },
