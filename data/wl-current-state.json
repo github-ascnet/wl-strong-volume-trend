@@ -3,7 +3,7 @@
   "symbolUniverse": "Nasdaq-100",
   "benchmark": "QQQ",
   "mode": "Long Only",
-  "lastUpdate": "2026-04-08 08:51:00",
+  "lastUpdate": "2026-04-08 08:57:56",
   "startingCapital": 40000,
   "backtestStartDate": "2006-04-06",
   "apr": 33.3707187302557,
