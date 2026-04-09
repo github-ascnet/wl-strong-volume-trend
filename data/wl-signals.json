@@ -1,6 +1,6 @@
 ﻿[
-  {"symbol":"NVDA","action":"SELL","isEntry":"FALSE","signalDate":"03/10/2023 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.8353252718487, },
-  {"symbol":"AMD","action":"SELL","isEntry":"FALSE","signalDate":"03/10/2023 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.701044648620842, },
-  {"symbol":"NFLX","action":"SELL","isEntry":"FALSE","signalDate":"03/10/2023 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.695839477124239, },
-  {"symbol":"TSLA","action":"SELL","isEntry":"FALSE","signalDate":"03/10/2023 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Sell At Market","orderType":"Market""signalStatus":"Staged""weigth":0.443127378815973, }
+  {"symbol":"NVDA","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":324650971.65},
+  {"symbol":"TSLA","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":132666887.5},
+  {"symbol":"INTC","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":116382160.1},
+  {"symbol":"PLTR","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":113348879.75}
 ]
