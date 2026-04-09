@@ -1,6 +1,3 @@
 ﻿[
-  {"symbol":"NVDA","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":324650971.65},
-  {"symbol":"TSLA","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":132666887.5},
-  {"symbol":"INTC","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":116382160.1},
-  {"symbol":"PLTR","action":"BUY","isEntry":"TRUE","signalDate":"2025-05-01 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":113348879.75}
+  {"message":"No signals generated for the latest backtest run","timestamp":"2026-04-09 11:06:12"}
 ]
