@@ -11,6 +11,7 @@
 <body>
     <div class="app">
         <header class="topbar">
+            <div id="strategyTitle" class="strategy-title"></div>
             <nav class="tabs" aria-label="Report Tabs">
                 <button class="tab active" data-tab="overview">
                     <span class="tab-icon icon-overview"></span>
@@ -65,7 +66,6 @@
                 <div class="panel-header">
                     <div>
                         <div class="panel-title">Equity Curve</div>
-                        <div class="panel-subtitle">Equity-Daten aus data/equity.json</div>
                     </div>
                 </div>
                 <div class="chart-wrap">
@@ -79,7 +79,6 @@
                 <div class="panel-header">
                     <div>
                         <div class="panel-title">Metrics Report</div>
-                        <div class="panel-subtitle">Kennzahlen aus data/current-state.json</div>
                     </div>
                     <div class="metrics-toolbar">
                         <label for="scoreCardSelect">Select ScoreCard:</label>
@@ -105,7 +104,6 @@
                 <div class="panel-header">
                     <div>
                         <div class="panel-title">Monthly Returns</div>
-                        <div class="panel-subtitle">Monatsrenditen aus data/equity.json berechnet</div>
                     </div>
                 </div>
                 <div class="body-section">
@@ -117,21 +115,20 @@
                 <div class="panel-header">
                     <div>
                         <div class="panel-title">Positions</div>
-                        <div class="panel-subtitle">Positionen aus data/positions.json</div>
                     </div>
                 </div>
                 <div class="body-section table-wrap">
                     <table>
                         <thead>
                             <tr>
-                                <th>Symbol</th>
-                                <th>Entry Date</th>
-                                <th>Exit Date</th>
+                                <th class="col-symbol">Symbol</th>
+                                <th class="sortable" data-sort="entryDate">Entry Date <span class="sort-icon"></span></th>
+                                <th class="sortable" data-sort="exitDate">Exit Date <span class="sort-icon"></span></th>
                                 <th>Entry Price</th>
                                 <th>Exit Price</th>
                                 <th>Qty</th>
                                 <th>P/L</th>
-                                <th>P/L %</th>
+                                <th class="sortable" data-sort="plPercent">P/L % <span class="sort-icon"></span></th>
                             </tr>
                         </thead>
                         <tbody id="positionsTableBody"></tbody>
@@ -141,6 +138,8 @@
         </main>
     </div>
 
+    <div id="cardTooltip" class="card-tooltip" role="tooltip"></div>
+    <script src="js/monthly-returns.js"></script>
     <script src="js/main.js"></script>
 </body>
 

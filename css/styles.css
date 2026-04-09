@@ -42,6 +42,17 @@ body {
   z-index: 10;
 }
 
+.strategy-title {
+  padding: 10px 16px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -103,8 +114,7 @@ body {
 .icon-overview {
   border: 1px solid #d8d8d8;
   border-radius: 2px;
-  background:
-    linear-gradient(#d8d8d8, #d8d8d8) 2px 3px / 9px 1px no-repeat,
+  background: linear-gradient(#d8d8d8, #d8d8d8) 2px 3px / 9px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 2px 6px / 9px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 2px 9px / 6px 1px no-repeat;
 }
@@ -127,26 +137,35 @@ body {
 .icon-metrics {
   border: 1px solid #d8d8d8;
   border-radius: 2px;
-  background:
-    linear-gradient(#d8d8d8, #d8d8d8) 3px 3px / 7px 1px no-repeat,
+  background: linear-gradient(#d8d8d8, #d8d8d8) 3px 3px / 7px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 3px 6px / 7px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 3px 9px / 5px 1px no-repeat;
 }
 
 .icon-monthly {
-  background:
-    linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 2px 4px / 2px 7px no-repeat,
-    linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 5px 2px / 2px 9px no-repeat,
-    linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 8px 6px / 2px 5px no-repeat;
+  background: linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 2px 4px / 2px
+      7px no-repeat,
+    linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 5px 2px / 2px 9px
+      no-repeat,
+    linear-gradient(180deg, #f0f0f0 0%, #cfcfcf 100%) 8px 6px / 2px 5px
+      no-repeat;
 }
 
 .icon-positions {
   border: 1px solid #d8d8d8;
-  background:
-    linear-gradient(#d8d8d8, #d8d8d8) 1px 3px / 11px 1px no-repeat,
+  background: linear-gradient(#d8d8d8, #d8d8d8) 1px 3px / 11px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 1px 6px / 11px 1px no-repeat,
     linear-gradient(#d8d8d8, #d8d8d8) 1px 9px / 11px 1px no-repeat,
-    linear-gradient(90deg, transparent 0 25%, #d8d8d8 25% 26%, transparent 26% 50%, #d8d8d8 50% 51%, transparent 51% 75%, #d8d8d8 75% 76%, transparent 76%);
+    linear-gradient(
+      90deg,
+      transparent 0 25%,
+      #d8d8d8 25% 26%,
+      transparent 26% 50%,
+      #d8d8d8 50% 51%,
+      transparent 51% 75%,
+      #d8d8d8 75% 76%,
+      transparent 76%
+    );
 }
 
 .content {
@@ -210,6 +229,48 @@ body {
   color: var(--muted);
   font-size: 12px;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--muted);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.card-tooltip {
+  position: fixed;
+  background: #2c2f34;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 12px;
+  font-family: var(--font);
+  line-height: 1.7;
+  padding: 10px 14px;
+  max-width: 320px;
+  white-space: pre-wrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-tooltip.visible {
+  opacity: 1;
 }
 
 .card-value {
@@ -288,6 +349,26 @@ tbody td:first-child {
   color: #f1f1f1;
 }
 
+.col-symbol {
+  width: 70px;
+  min-width: 50px;
+  max-width: 80px;
+}
+
+.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable:hover {
+  color: #fff;
+}
+
+.sort-icon {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
 .metrics-toolbar {
   display: flex;
   align-items: center;
@@ -304,28 +385,69 @@ select {
   font: inherit;
 }
 
-.months-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 10px;
-}
-
-.month-cell {
-  background: linear-gradient(180deg, #282b30 0%, #21242a 100%);
-  border: 1px solid var(--border-soft);
-  border-radius: 8px;
-  padding: 12px;
-}
-
-.month-name {
+.mr-summary {
+  display: flex;
+  gap: 32px;
+  padding: 12px 16px 0;
+  font-size: 13px;
   color: var(--muted);
-  font-size: 12px;
-  margin-bottom: 10px;
 }
 
-.month-value {
-  font-size: 18px;
+.neutral-text {
+  color: var(--text);
+}
+
+.mr-table-wrap {
+  overflow-x: auto;
+  padding: 12px 0;
+}
+
+.mr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.mr-table th {
+  text-align: right;
+  padding: 6px 10px;
+  color: var(--muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.mr-table th:first-child {
+  text-align: left;
+}
+
+.mr-year {
+  padding: 5px 10px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.mr-cell {
+  text-align: right;
+  padding: 5px 10px;
   color: #fff;
+}
+
+.mr-cell.positive {
+  color: var(--green);
+}
+
+.mr-cell.negative {
+  color: var(--red);
+}
+
+.mr-annual {
+  font-weight: 600;
+  border-left: 1px solid var(--border-soft);
+}
+
+.mr-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .badge {
