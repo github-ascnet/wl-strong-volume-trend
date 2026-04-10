@@ -1,6 +1,3 @@
 ﻿[
-  {"symbol":"NVDA","action":"BUY","isEntry":"TRUE","signalDate":"2026-04-08 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":164413835.4},
-  {"symbol":"INTC","action":"BUY","isEntry":"TRUE","signalDate":"2026-04-08 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":95264947.1},
-  {"symbol":"TSLA","action":"BUY","isEntry":"TRUE","signalDate":"2026-04-08 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":63793168.85},
-  {"symbol":"MU","action":"BUY","isEntry":"TRUE","signalDate":"2026-04-08 00:00:00","entryPrice":0,"stopPrice":null,"targetPrice":null,"positionSizePercent":null,"signalName":"Buy At Market","orderType":"Market","signalStatus":"Staged","weight":50334221.15}
+  {"message":"No signals generated for the latest backtest run","timestamp":"2026-04-10 21:11:58"}
 ]
