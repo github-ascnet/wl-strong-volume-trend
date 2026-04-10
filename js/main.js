@@ -265,6 +265,10 @@ function renderPositionsRows(positions) {
         ? formatDateLong(position.exitDate)
         : "Open";
 
+      const entryMs = position.entryDate ? new Date(position.entryDate).getTime() : null;
+      const exitMs = position.exitDate ? new Date(position.exitDate).getTime() : Date.now();
+      const daysHeld = entryMs != null ? Math.round((exitMs - entryMs) / 86400000) : "";
+
       return `
       <tr>
         <td class="col-symbol">${escapeHtml(symbol)}</td>
@@ -277,6 +281,7 @@ function renderPositionsRows(positions) {
         <td class="${escapeHtml(plPercentClass)}">${escapeHtml(
         formatPercent(position.plPercent)
       )}</td>
+        <td>${daysHeld}</td>
       </tr>
     `;
     })
@@ -288,7 +293,7 @@ function renderPositions(positions) {
 
   if (!Array.isArray(positions) || positions.length === 0) {
     positionsTableBody.innerHTML =
-      '<tr><td colspan="8" class="empty">Keine Positionen vorhanden.</td></tr>';
+      '<tr><td colspan="9" class="empty">Keine Positionen vorhanden.</td></tr>';
     return;
   }
 
