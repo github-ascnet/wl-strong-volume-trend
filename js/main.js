@@ -571,15 +571,21 @@ async function initializeDashboard() {
       loadJson(DATA_FILES.equity),
     ]);
 
+    const cleanedName = cleanStrategyName(currentState.strategyName);
+
     const strategyTitleEl = document.getElementById("strategyTitle");
-    if (strategyTitleEl)
-      strategyTitleEl.textContent = cleanStrategyName(
-        currentState.strategyName
-      );
+    if (strategyTitleEl) strategyTitleEl.textContent = cleanedName;
+
+    if (cleanedName) document.title = cleanedName;
 
     const strategyDescEl = document.getElementById("strategyDescription");
     if (strategyDescEl && currentState.strategyDescription) {
       strategyDescEl.textContent = currentState.strategyDescription;
+    }
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && currentState.strategyDescription) {
+      metaDesc.setAttribute("content", currentState.strategyDescription);
     }
 
     renderOverview(currentState, signals);
