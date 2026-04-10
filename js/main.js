@@ -265,9 +265,14 @@ function renderPositionsRows(positions) {
         ? formatDateLong(position.exitDate)
         : "Open";
 
-      const entryMs = position.entryDate ? new Date(position.entryDate).getTime() : null;
-      const exitMs = position.exitDate ? new Date(position.exitDate).getTime() : Date.now();
-      const daysHeld = entryMs != null ? Math.round((exitMs - entryMs) / 86400000) : "";
+      const entryMs = position.entryDate
+        ? new Date(position.entryDate).getTime()
+        : null;
+      const exitMs = position.exitDate
+        ? new Date(position.exitDate).getTime()
+        : Date.now();
+      const daysHeld =
+        entryMs != null ? Math.round((exitMs - entryMs) / 86400000) : "";
 
       return `
       <tr>
