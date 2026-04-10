@@ -11,29 +11,32 @@
 <body>
     <div class="app">
         <header class="topbar">
-            <div id="strategyTitle" class="strategy-title"></div>
-            <nav class="tabs" aria-label="Report Tabs">
-                <button class="tab active" data-tab="overview">
-                    <span class="tab-icon icon-overview"></span>
-                    <span>Overview</span>
-                </button>
-                <button class="tab" data-tab="equity-curve">
-                    <span class="tab-icon icon-equity"></span>
-                    <span>Equity Curve</span>
-                </button>
-                <button class="tab" data-tab="metrics-report">
-                    <span class="tab-icon icon-metrics"></span>
-                    <span>Metrics Report</span>
-                </button>
-                <button class="tab" data-tab="monthly-returns">
-                    <span class="tab-icon icon-monthly"></span>
-                    <span>Monthly Returns</span>
-                </button>
-                <button class="tab" data-tab="positions">
-                    <span class="tab-icon icon-positions"></span>
-                    <span>Positions</span>
-                </button>
-            </nav>
+            <div class="topbar-inner">
+                <div id="strategyTitle" class="strategy-title"></div>
+                <div id="strategyDescription" class="strategy-description"></div>
+                <nav class="tabs" aria-label="Report Tabs">
+                    <button class="tab active" data-tab="overview">
+                        <span class="tab-icon icon-overview"></span>
+                        <span>Overview</span>
+                    </button>
+                    <button class="tab" data-tab="equity-curve">
+                        <span class="tab-icon icon-equity"></span>
+                        <span>Equity Curve</span>
+                    </button>
+                    <button class="tab" data-tab="metrics-report">
+                        <span class="tab-icon icon-metrics"></span>
+                        <span>Metrics Report</span>
+                    </button>
+                    <button class="tab" data-tab="monthly-returns">
+                        <span class="tab-icon icon-monthly"></span>
+                        <span>Monthly Returns</span>
+                    </button>
+                    <button class="tab" data-tab="positions">
+                        <span class="tab-icon icon-positions"></span>
+                        <span>Positions</span>
+                    </button>
+                </nav>
+            </div>
         </header>
 
         <main class="content">
@@ -70,7 +73,7 @@
                 </div>
                 <div class="chart-wrap">
                     <div class="chart-box">
-                        <svg id="equityChart" viewBox="0 0 1000 340" preserveAspectRatio="none" aria-label="Equity Curve Chart"></svg>
+                        <svg id="equityChart" viewBox="0 0 1000 340" preserveAspectRatio="xMidYMid meet" aria-label="Equity Curve Chart"></svg>
                     </div>
                 </div>
             </section>

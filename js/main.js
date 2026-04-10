@@ -173,7 +173,7 @@ function renderOverview(currentState, signals) {
 
   const metrics = [
     ["Starting Capital", formatNumber(currentState.startingCapital)],
-    ["Backtest Start", formatDateLong(currentState.backtestStartDate)],
+    ["Start Date", formatDateLong(currentState.backtestStartDate)],
     ["Profit", formatNumber(currentState.profit)],
     ["Profit %", formatPercent(currentState.profitPercent)],
     ["Position Count", currentState.positionCount],
@@ -204,7 +204,7 @@ function renderMetricsReport(currentState) {
 
   const rows = [
     ["Starting Capital", formatNumber(currentState.startingCapital)],
-    ["Backtest Start", formatDateLong(currentState.backtestStartDate)],
+    ["Start Date", formatDateLong(currentState.backtestStartDate)],
     ["APR", formatPercent(currentState.apr)],
     ["Profit", formatNumber(currentState.profit)],
     ["Profit %", formatPercent(currentState.profitPercent)],
@@ -410,11 +410,39 @@ function renderEquityChart(equityData) {
         Math.round((equityData.length - 1) * ratio)
       );
       const x = margin.left + ratio * chartWidth;
+      const anchor = ratio === 0 ? "start" : ratio === 1 ? "end" : "middle";
       return `<text x="${x}" y="${
         height - 12
-      }" text-anchor="middle" fill="#aeb4be" font-size="12">${escapeHtml(
+      }" text-anchor="${anchor}" fill="#aeb4be" font-size="12">${escapeHtml(
         equityData[index].date
       )}</text>`;
+    })
+    .join("");
+
+  // Detect flat (cash) zones: equity unchanged for 3+ consecutive data points
+  const cashZones = [];
+  let zoneStart = 0;
+  for (let i = 1; i <= points.length; i += 1) {
+    const same =
+      i < points.length &&
+      Math.abs(points[i].equity - points[zoneStart].equity) < 0.01;
+    if (!same) {
+      if (i - zoneStart >= 3) {
+        cashZones.push({ from: zoneStart, to: i - 1 });
+      }
+      zoneStart = i;
+    }
+  }
+
+  const cashZoneRects = cashZones
+    .map(({ from, to }) => {
+      const x1 = points[from].x;
+      const x2 = points[to].x;
+      return `<rect x="${x1.toFixed(2)}" y="${margin.top}" width="${(
+        x2 - x1
+      ).toFixed(
+        2
+      )}" height="${chartHeight}" fill="#ff8080" opacity="0.18" rx="0"/>`;
     })
     .join("");
 
@@ -429,6 +457,7 @@ function renderEquityChart(equityData) {
       ${horizontalGrid}
       ${verticalGrid}
     </g>
+    ${cashZoneRects}
     <path d="${areaPath}" fill="url(#fillGreen)"></path>
     <path d="${linePath}" fill="none" stroke="#56e86c" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"></path>
     ${yLabels}
@@ -547,6 +576,11 @@ async function initializeDashboard() {
       strategyTitleEl.textContent = cleanStrategyName(
         currentState.strategyName
       );
+
+    const strategyDescEl = document.getElementById("strategyDescription");
+    if (strategyDescEl && currentState.strategyDescription) {
+      strategyDescEl.textContent = currentState.strategyDescription;
+    }
 
     renderOverview(currentState, signals);
     renderMetricsReport(currentState);
