@@ -15,7 +15,15 @@
             <div class="topbar-inner">
                 <div id="strategyTitle" class="strategy-title"></div>
                 <div id="strategyDescription" class="strategy-description"></div>
-                <nav class="tabs" aria-label="Report Tabs">
+                <div class="topbar-nav-row">
+                    <span class="active-tab-label" id="activeTabLabel">Overview</span>
+                    <button class="hamburger" id="hamburgerBtn" aria-label="Menü öffnen" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <nav class="tabs" id="mainNav" aria-label="Report Tabs">
                     <button class="tab active" data-tab="overview">
                         <span class="tab-icon icon-overview"></span>
                         <span>Overview</span>
@@ -84,12 +92,6 @@
                     <div>
                         <div class="panel-title">Metrics Report</div>
                     </div>
-                    <div class="metrics-toolbar">
-                        <label for="scoreCardSelect">Select ScoreCard:</label>
-                        <select id="scoreCardSelect">
-                            <option>Summary ScoreCard</option>
-                        </select>
-                    </div>
                 </div>
                 <div class="body-section table-wrap">
                     <table>
@@ -128,10 +130,10 @@
                                 <th class="col-symbol">Symbol</th>
                                 <th class="sortable" data-sort="entryDate">Entry Date <span class="sort-icon"></span></th>
                                 <th class="sortable" data-sort="exitDate">Exit Date <span class="sort-icon"></span></th>
-                                <th>Entry Price</th>
-                                <th>Exit Price</th>
-                                <th>Qty</th>
-                                <th>P/L</th>
+                                <th class="col-hide-mobile">Entry Price</th>
+                                <th class="col-hide-mobile">Exit Price</th>
+                                <th class="col-hide-mobile">Qty</th>
+                                <th class="col-hide-mobile">P/L</th>
                                 <th class="sortable" data-sort="plPercent">P/L % <span class="sort-icon"></span></th>
                                 <th>Days Held</th>
                             </tr>

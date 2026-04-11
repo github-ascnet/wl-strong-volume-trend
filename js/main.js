@@ -1,12 +1,26 @@
 const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".panel");
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const mainNav = document.getElementById("mainNav");
+const activeTabLabel = document.getElementById("activeTabLabel");
 
-const DATA_FILES = {
-  currentState: "data/wl-current-state.json",
-  signals: "data/signals.json",
-  positions: "data/wl-positions.json",
-  equity: "data/wl-equity.json",
-};
+function closeMenu() {
+  mainNav.classList.remove("open");
+  hamburgerBtn.classList.remove("open");
+  hamburgerBtn.setAttribute("aria-expanded", "false");
+}
+
+hamburgerBtn.addEventListener("click", () => {
+  const isOpen = mainNav.classList.toggle("open");
+  hamburgerBtn.classList.toggle("open", isOpen);
+  hamburgerBtn.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.addEventListener("click", (e) => {
+  if (!mainNav.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+    closeMenu();
+  }
+});
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -17,8 +31,19 @@ tabs.forEach((tab) => {
 
     tab.classList.add("active");
     document.getElementById(target).classList.add("active");
+
+    activeTabLabel.textContent =
+      tab.querySelector("span:last-child").textContent;
+    closeMenu();
   });
 });
+
+const DATA_FILES = {
+  currentState: "data/wl-current-state.json",
+  signals: "data/signals.json",
+  positions: "data/wl-positions.json",
+  equity: "data/wl-equity.json",
+};
 
 function escapeHtml(value) {
   return String(value ?? "")
@@ -279,10 +304,18 @@ function renderPositionsRows(positions) {
         <td class="col-symbol">${escapeHtml(symbol)}</td>
         <td>${escapeHtml(formatDateLong(position.entryDate))}</td>
         <td>${escapeHtml(exitDateDisplay)}</td>
-        <td>${escapeHtml(formatNumber(position.entryPrice))}</td>
-        <td>${escapeHtml(formatNumber(position.exitPrice))}</td>
-        <td>${escapeHtml(formatNumber(position.qty, 0))}</td>
-        <td class="${escapeHtml(plClass)}">${escapeHtml(plFormatted)}</td>
+        <td class="col-hide-mobile">${escapeHtml(
+          formatNumber(position.entryPrice)
+        )}</td>
+        <td class="col-hide-mobile">${escapeHtml(
+          formatNumber(position.exitPrice)
+        )}</td>
+        <td class="col-hide-mobile">${escapeHtml(
+          formatNumber(position.qty, 0)
+        )}</td>
+        <td class="col-hide-mobile ${escapeHtml(plClass)}">${escapeHtml(
+        plFormatted
+      )}</td>
         <td class="${escapeHtml(plPercentClass)}">${escapeHtml(
         formatPercent(position.plPercent)
       )}</td>
