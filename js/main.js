@@ -144,8 +144,8 @@ function renderOverview(currentState, signals, positions) {
       cssClass: getValueClass(currentState.apr),
     },
     {
-      label: "Profit",
-      value: formatNumber(currentState.profit),
+      label: "Profit (USD)",
+      value: formatNumber(currentState.profit, 0),
       cssClass: getValueClass(currentState.profit),
     },
     {
@@ -224,11 +224,11 @@ function renderOverview(currentState, signals, positions) {
     .join("");
 
   const metrics = [
-    ["Starting Capital", formatNumber(currentState.startingCapital)],
+    ["Starting Capital", formatNumber(currentState.startingCapital, 0)],
     ["Start Date", formatDateLong(currentState.backtestStartDate)],
     ["Universe", universeName],
     ["Datasource", datasourceName],
-    ["Profit", formatNumber(currentState.profit)],
+    ["Profit", formatNumber(currentState.profit, 0)],
     ["Profit %", formatPercent(currentState.profitPercent)],
     ["Position Count", currentState.positionCount],
     ["Avg Return % (Year)", formatPercent(currentState.avgReturnYear)],
@@ -255,10 +255,10 @@ function renderMetricsReport(currentState) {
   const metricsTableBody = document.getElementById("metricsTableBody");
 
   const rows = [
-    ["Starting Capital", formatNumber(currentState.startingCapital)],
+    ["Starting Capital", formatNumber(currentState.startingCapital, 0)],
     ["Start Date", formatDateLong(currentState.backtestStartDate)],
     ["APR", formatPercent(currentState.apr)],
-    ["Profit", formatNumber(currentState.profit)],
+    ["Profit", formatNumber(currentState.profit, 0)],
     ["Profit %", formatPercent(currentState.profitPercent)],
     ["Risk-Return Meta Score", currentState.riskReturnMetaScore],
     ["Sharpe Ratio", formatNumber(currentState.sharpeRatio)],
