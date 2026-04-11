@@ -123,15 +123,18 @@ async function loadJson(path) {
   return response.json();
 }
 
-function renderOverview(currentState, signals) {
+function renderOverview(currentState, signals, positions) {
   const overviewCards = document.getElementById("overviewCards");
   const overviewTableBody = document.getElementById("overviewTableBody");
   const overviewSubtitle = document.getElementById("overviewSubtitle");
   const lastUpdateBadge = document.getElementById("lastUpdateBadge");
 
+  const universeParts = (currentState.symbolUniverse || "").split(";");
+  const universeName = universeParts[0]?.trim() || "Unknown";
+  const datasourceName = universeParts[1]?.trim() || "Unknown";
   overviewSubtitle.textContent = `${cleanStrategyName(
     currentState.strategyName
-  )} · ${currentState.symbolUniverse} · ${currentState.mode}`;
+  )} · Universe: ${universeName} · Datasource: ${datasourceName}`;
   lastUpdateBadge.textContent = `Stand: ${formatDate(currentState.lastUpdate)}`;
 
   const cards = [
@@ -163,14 +166,33 @@ function renderOverview(currentState, signals) {
     {
       label: "Risk-Return Score",
       value: formatNumber(currentState.riskReturnMetaScore),
-      cssClass: "neutral",
+      cssClass:
+        currentState.riskReturnMetaScore >= 50
+          ? "positive"
+          : currentState.riskReturnMetaScore >= 35
+          ? "neutral"
+          : "negative",
+      valueSuffix: currentState.riskReturnMetaScore >= 80 ? " 🏆" : "",
       tooltip:
         "RRSuperScore kombiniert APR, MAR Ratio, Recovery Factor, Stabilitätskennzahlen, maximalen Drawdown und den Anteil extremer Ausreisser zu einem gewichteten Gesamtscore zwischen 0 und 100.\n\nInterpretation des Scorebereichs:\n80–100\u2002 Sehr gut – geringe Risiken, starke Resilienz\n50–79\u2002\u2002Gut – stabile Strategie mit vertretbaren Risiken\n35–49\u2002\u2002Durchschnitt – gewisse Schwächen sichtbar\n20–34\u2002\u2002Schwach – entweder ineffizient oder riskant\n\u2002 0–19\u2002\u2002Kritisch – nicht empfehlenswert",
     },
     {
       label: "Aktive Signale",
-      value: String(Array.isArray(signals) ? signals.length : 0),
-      cssClass: "neutral",
+      value: String(
+        Array.isArray(positions)
+          ? positions.filter(
+              (p) => p.isOpen || p.exitDate === null || p.exitDate === undefined
+            ).length
+          : 0
+      ),
+      cssClass: (() => {
+        const n = Array.isArray(positions)
+          ? positions.filter(
+              (p) => p.isOpen || p.exitDate === null || p.exitDate === undefined
+            ).length
+          : 0;
+        return n > 0 ? "positive" : "negative";
+      })(),
     },
   ];
 
@@ -190,7 +212,7 @@ function renderOverview(currentState, signals) {
       </div>
       <div class="card-value ${escapeHtml(card.cssClass)}">${escapeHtml(
         card.value
-      )}</div>
+      )}${card.valueSuffix ?? ""}</div>
     </div>
   `
     )
@@ -209,7 +231,6 @@ function renderOverview(currentState, signals) {
     ["Recovery Factor", formatNumber(currentState.recoveryFactor)],
     ["Avg Profit %", formatPercent(currentState.avgProfitPercent)],
     ["Profitable %", formatPercent(currentState.profitablePercent)],
-    ["Last Signal Count", Array.isArray(signals) ? signals.length : 0],
   ];
 
   overviewTableBody.innerHTML = metrics
@@ -574,10 +595,6 @@ function renderEquityChart(equityData) {
 
 function renderSignals(signals) {
   const badge = document.getElementById("lastUpdateBadge");
-  if (Array.isArray(signals) && signals.length > 0) {
-    const latest = signals[0];
-    badge.textContent += ` · Letztes Signal: ${latest.symbol} ${latest.action}`;
-  }
 }
 
 function renderError(error) {
@@ -631,7 +648,7 @@ async function initializeDashboard() {
       metaDesc.setAttribute("content", currentState.strategyDescription);
     }
 
-    renderOverview(currentState, signals);
+    renderOverview(currentState, signals, positions);
     renderMetricsReport(currentState);
     renderPositions(positions);
     renderMonthlyReturns(equity, currentState);
